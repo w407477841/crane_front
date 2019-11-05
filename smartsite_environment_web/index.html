@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <link rel="shortcut icon" href="./static/favicon.ico" type="image/x-icon">
+  <script type="text/javascript" src="//at.alicdn.com/t/font_790009_bp86oqarxkq.js"></script>
+  <script src="./static/sockjs.min.js"></script>
+  <script src="./static/stomp.min.js"></script>
+  <script type="text/javascript" src="./static/webVideoCtrl.js"></script>
+  <script type="text/javascript" src="./static/dahua.js"></script>
+  <script type="text/javascript" src="./static/jquery.js"></script>
+  <script type="text/javascript" src="./static/md5.js"></script>
+  <link rel="stylesheet" href="./static/swiper.min.css">
+  <script type="text/javascript" src="./static/swiper.min.js"></script>
+  <script type="text/javascript" src="./static/bscroll.min.js" charset="utf-8"></script>
+  <script type="text/javascript" src="./static/date.js" charset="utf-8"></script>
+  <title>smartsite_web</title>
+  <style type="text/css">
+    .icon {
+      width: 1em;
+      height: 1em;
+      vertical-align: -0.15em;
+      fill: currentColor;
+      overflow: hidden;
+    }
+  </style>
+  <script>
+    if (document.documentElement.clientWidth > 2000) {
+      let fontSize = 540 * 20 / 320;
+      window.fontProportion = (fontSize / 16).toFixed(2);
+    } else {
+      window.fontProportion = 1;
+    }
+
+    function addEventOnResize(fn) {
+      var originFn = window.onresize
+      window.onresize = function () {
+        originFn && originFn()
+        fn()
+      }
+    }
+  </script>
+</head>
+
+<body>
+  <div id="app"></div>
+  <!-- built files will be auto injected -->
+</body>
+
+</html>

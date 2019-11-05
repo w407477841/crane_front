@@ -1,0 +1,201 @@
+#app {
+  // 主体区域
+  .main-container {
+    min-height: 100%;
+    transition: margin-left .28s;
+    margin-left: 240px;
+    position: relative;
+  }
+  // 侧边栏
+  .sidebar-container {
+    transition: width 0.28s;
+    width: 240px !important;
+    height: 100%;
+    position: fixed;
+    font-size: 0px;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 1001;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    //reset element-ui css
+    .horizontal-collapse-transition {
+      transition: 0s width ease-in-out, 0s padding-left ease-in-out, 0s padding-right ease-in-out;
+    }
+    .sidebar-title{
+      height: 49px;
+      padding: 5px 0;
+      background-color: #006ca9;
+      .sidebar-logo{
+        height: 100%;
+        background-image: url('~@/assets/image/logo.png');      
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position: center;
+      }
+      // .sidebar-text{
+      //   height: 34px;
+      //   line-height: 34px;
+      //   font-size: 24px;
+      //   color: #607198;
+      //   text-align: center;       
+      //   font-style: italic;
+      // }
+    }
+    .menu-container{
+      flex: 1;
+      height: calc(100% + 15px);
+      // background-color: #333d54;
+      display: flex;
+    }
+    .device-menu{
+      width: 85px;
+      height: 100%;
+      display: flex;
+      background-color: #334a65;
+      .deviceItem{
+        height: 80px;
+        font-size: 14px;
+        color: #85a0bf;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        &:hover{
+          background-color: #3f5773;
+        }
+        .icon{
+          font-size: 28px;
+          
+        }
+      }
+      .deviceItem.active{
+        background-color: #3f5773;
+      }
+    }
+    .route-menu{
+      flex: 1;
+      width: 155px;
+      display: flex;
+      flex-direction: column;
+      .hamburger_box{
+        text-align: center;
+        padding: 7px 0;
+        height: 35px;
+        background-color: #f3f3f5;
+      }
+    }
+    .el-scrollbar{
+      flex: 1;
+    }
+    .scrollbar-wrapper {
+      height: calc(100% + 15px);
+      .el-scrollbar__view {
+        height: 100%;
+      }
+    }
+    .is-horizontal {
+      display: none;
+    }
+    a {
+      display: inline-block;
+      width: 100%;
+      overflow: hidden;
+    }
+    .svg-icon {
+      margin-right: 16px;
+    }
+    .el-menu {
+      border: none;
+      height: 100%;
+      width: 100% !important;
+    }
+  }
+  .hideSidebar {
+    .route-menu{
+      width: 30px;
+    }
+    .sidebar-container {
+      width: 115px !important;
+    }
+    .main-container {
+      margin-left: 115px;
+    }
+    .submenu-title-noDropdown {
+      padding-left: 10px !important;
+      position: relative;
+      .el-tooltip {
+        padding: 0 10px !important;
+      }
+    }
+    .el-submenu {
+      overflow: hidden;
+      &>.el-submenu__title {
+        padding-left: 10px !important;
+        .el-submenu__icon-arrow {
+          display: none;
+        }
+      }
+    }
+    .el-menu--collapse {
+      .el-submenu {
+        &>.el-submenu__title {
+          &>span {
+            height: 0;
+            width: 0;
+            overflow: hidden;
+            visibility: hidden;
+            display: inline-block;
+          }
+        }
+      }
+    }
+  }
+  .sidebar-container .nest-menu .el-submenu>.el-submenu__title,
+  .sidebar-container .el-submenu .el-menu-item {
+    min-width: 155px !important;
+    &:hover {
+      color: #000 !important;
+      background-color: #f4f8f9 !important;
+    }
+  }
+  .route-scrollbar .menu-wrapper .el-submenu{
+    &.is-opened>.el-submenu__title{
+      color: #000 !important;
+      background-color: #f4f8f9 !important;
+    }
+    &.is-active>.el-submenu__title{
+      color: #000 !important;
+      background-color: #f4f8f9 !important;
+    }
+  }
+  .el-menu--collapse .el-menu .el-submenu {
+    min-width: 155px !important;
+  }
+
+  //适配移动端
+  .mobile {
+    .main-container {
+      margin-left: 0px;
+    }
+    .sidebar-container {
+      transition: transform .28s;
+      width: 240px !important;
+    }
+    &.hideSidebar {
+      .sidebar-container {
+        transition-duration: 0.3s;
+        transform: translate3d(-240px, 0, 0);
+      }
+    }
+  }
+  .withoutAnimation {
+    .main-container,
+    .sidebar-container {
+      transition: none;
+    }
+  }
+}
